@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Jenkins_project</title>
+    <title></title>
 </head>
 <body>
-    <h1>How to Work with this Repository</h1>
+    <h1 align="center">Jenkins_project</h1>
+    <h3 align="center">How to Work with this Repository</h3>
     <ol>
         <li>
             <p>Clone the repository to your machine.</p>
