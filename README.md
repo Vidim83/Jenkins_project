@@ -11,7 +11,7 @@ This example requires the following softwares to run.
   * [Jenkins](https://www.jenkins.io/download/)
   * [Maven](https://maven.apache.org/download.cgi)
   * [Selenium](https://www.selenium.dev/downloads/)
-  * Chrome
+  * [Chrome](https://www.google.com/intl/ru/chrome/)
 
 ## How to Work with this Repository
 
