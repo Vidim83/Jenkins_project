@@ -9,7 +9,7 @@ This example requires the following softwares to run.
 
   * [Java 17](https://www.oracle.com/java/technologies/downloads/) or above
   * [Jenkins](https://www.jenkins.io/download/)
-  * [Maven](https://www.jenkins.io/download/)
+  * [Maven](https://maven.apache.org/download.cgi)
   * [Selenium](https://www.selenium.dev/downloads/)
   * Chrome
 
