@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-</head>
 <body>
     <h1 align="center">Jenkins_project</h1>
     <h3 align="center">How to Work with this Repository</h3>
