@@ -11,10 +11,10 @@
             <p>Navigate to the root folder of the project.</p>
         </li>
         <li>
-            <p>Upgrade Dependencies  in pom.xml file.</p>
+            <p>Upgrade dependencies in the "pom.xml" file.</p>
         </li>
         <li>
-            <p>Execute the Tests.</p>
+            <p>Execute the tests.</p>
         </li>
     </ol>
 </body>
