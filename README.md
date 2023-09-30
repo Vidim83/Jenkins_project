@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html>
-<body>
-    <h1 align="center">Jenkins_project</h1>
-    <h3 align="center">How to Work with this Repository</h3>
-    <ol>
-        <li>
-            <p>Clone the repository to your machine.</p>
-        </li>
-        <li>
-            <p>Navigate to the root folder of the project.</p>
-        </li>
-        <li>
-            <p>Upgrade dependencies in the "pom.xml" file.</p>
-        </li>
-        <li>
-            <p>Execute the tests.</p>
-        </li>
-    </ol>
-</body>
-</html>
+# Jenkins_project
 
+## Running this example
+The tests are run on Chrome by default.
+
+### Prerequisites
+
+This example requires the following softwares to run.
+
+  * [Java 17](https://www.oracle.com/java/technologies/downloads/) or above
+  * [Jenkins](https://www.jenkins.io/download/)
+  * [Maven](https://www.jenkins.io/download/)
+  * [Selenium](https://www.selenium.dev/downloads/)
+  * Chrome
+
+## How to Work with this Repository
+
+* Clone the repository to your machine;
+* Navigate to the root folder of the project;
+* Upgrade dependencies in the pom.xml file;
+* Execute the tests.
