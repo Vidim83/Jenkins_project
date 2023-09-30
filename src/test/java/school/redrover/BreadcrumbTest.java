@@ -388,9 +388,9 @@ public class BreadcrumbTest extends BaseTest {
     public Object[][] provideJobSubmenuOption() {
         return new Object[][]{
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new ChangesPage(driver), "Changes"},
+                        ChangesPage::new, "Changes"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new WorkspacePage(driver), "Error: no workspace"},
+                        WorkspacePage::new, "Error: no workspace"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new MultiConfigurationProjectConfigPage(new MultiConfigurationProjectPage(driver)), "Configure"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
@@ -456,7 +456,6 @@ public class BreadcrumbTest extends BaseTest {
     @Description("Verification that a user is able to navigate to 'Build' page from the project drop-down")
     @Test(dataProvider = "job-types")
     public void testNavigateToMultiConfigurationPagesFromDropdownOnBreadcrumbBuildNow(TestUtils.JobType jobType) {
-        final String optionName = "Build Now";
 
         TestUtils.createJob(this, PROJECT_NAME, jobType, false);
 
@@ -493,9 +492,9 @@ public class BreadcrumbTest extends BaseTest {
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new OrganizationFolderConfigPage(new OrganizationFolderPage(driver)), "Configuration"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new ScanOtherFoldersLogPage(driver), "Scan Organization Folder Log"},
+                        ScanOtherFoldersLogPage::new, "Scan Organization Folder Log"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new OtherFoldersEventsPage(driver), "Organization Folder Events"},
+                        OtherFoldersEventsPage::new, "Organization Folder Events"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new DeletePage<>(new OrganizationFolderPage(driver)), "Delete Organization Folder " + PROJECT_NAME},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
@@ -503,9 +502,9 @@ public class BreadcrumbTest extends BaseTest {
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new RenamePage<>(new OrganizationFolderPage(driver)), "Rename Organization Folder " + PROJECT_NAME},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new PipelineSyntaxPage(driver), "Overview"},
+                        PipelineSyntaxPage::new, "Overview"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new CredentialsPage(driver), "Credentials"}
+                        CredentialsPage::new, "Credentials"}
         };
     }
 
@@ -533,23 +532,23 @@ public class BreadcrumbTest extends BaseTest {
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new MultibranchPipelineConfigPage(new MultibranchPipelinePage(driver)), "Configuration"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new ScanOtherFoldersLogPage(driver), "Scan Multibranch Pipeline Log"},
+                        ScanOtherFoldersLogPage::new, "Scan Multibranch Pipeline Log"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new OtherFoldersEventsPage(driver), "Multibranch Pipeline Events"},
+                        OtherFoldersEventsPage::new, "Multibranch Pipeline Events"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new DeletePage<>(new MultibranchPipelinePage(driver)), "Delete Multibranch Pipeline " + PROJECT_NAME},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new PeoplePage(driver), "People - Welcome"},
+                        PeoplePage::new, "People - Welcome"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new BuildHistoryPage(driver), "Build History of Welcome"},
+                        BuildHistoryPage::new, "Build History of Welcome"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new MovePage<>(new MultibranchPipelinePage(driver)), "Move"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new RenamePage<>(new MultibranchPipelinePage(driver)), "Rename Multibranch Pipeline " + PROJECT_NAME},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new PipelineSyntaxPage(driver), "Overview"},
+                        PipelineSyntaxPage::new, "Overview"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new CredentialsPage(driver), "Credentials"}
+                        CredentialsPage::new, "Credentials"}
         };
     }
 
@@ -603,7 +602,7 @@ public class BreadcrumbTest extends BaseTest {
     public Object[][] pipeDropDownBreadcrumb() {
         return new Object[][]{
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new ChangesPage(driver), "Changes"},
+                        ChangesPage::new, "Changes"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new PipelineConfigPage(new PipelinePage(driver)), "Configure"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
@@ -611,11 +610,11 @@ public class BreadcrumbTest extends BaseTest {
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new MovePage<>(new PipelinePage(driver)), "Move"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new FullStageViewPage(driver), PROJECT_NAME + " - Stage View"},
+                        FullStageViewPage::new, PROJECT_NAME + " - Stage View"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new RenamePage<>(new PipelinePage(driver)), "Rename Pipeline " + PROJECT_NAME},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new PipelineSyntaxPage(driver), "Overview"}};
+                        PipelineSyntaxPage::new, "Overview"}};
     }
 
     @Severity(SeverityLevel.NORMAL)
@@ -647,13 +646,13 @@ public class BreadcrumbTest extends BaseTest {
     public Object[][] userDropDownBreadcrumbToMyViews2() {
         return new Object[][]{
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new BuildPage(driver), "Builds for admin"},
+                        BuildPage::new, "Builds for admin"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new UserConfigPage(new UserPage(driver)), "Full Name"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new MyViewsPage(driver), "This folder is empty"},
+                        MyViewsPage::new, "This folder is empty"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new CredentialsPage(driver), "Credentials"},
+                        CredentialsPage::new, "Credentials"},
         };
     }
 
@@ -680,9 +679,9 @@ public class BreadcrumbTest extends BaseTest {
     public Object[][] FreestyleDropDownBreadcrumb() {
         return new Object[][]{
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new ChangesPage(driver), "Changes"},
+                        ChangesPage::new, "Changes"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new WorkspacePage(driver), "Error: no workspace"},
+                        WorkspacePage::new, "Error: no workspace"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new FreestyleProjectConfigPage(new FreestyleProjectPage(driver)), "Configure"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
@@ -690,7 +689,7 @@ public class BreadcrumbTest extends BaseTest {
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
                         driver -> new MovePage<>(new FreestyleProjectPage(driver)), "Move"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>)
-                        driver -> new RenamePage<FreestyleProjectPage>(new FreestyleProjectPage(driver)), "Rename Project " + PROJECT_NAME}
+                        driver -> new RenamePage<>(new FreestyleProjectPage(driver)), "Rename Project " + PROJECT_NAME}
         };
     }
 
@@ -722,10 +721,10 @@ public class BreadcrumbTest extends BaseTest {
     @DataProvider(name = "testuserDropDownMenu")
     public Object[][] userDropDownBreadcrumb() {
         return new Object[][]{
-                {(Function<WebDriver, BaseMainHeaderPage<?>>) driver -> new BuildPage(driver), "Builds for tuser"},
+                {(Function<WebDriver, BaseMainHeaderPage<?>>) BuildPage::new, "Builds for tuser"},
                 {(Function<WebDriver, BaseMainHeaderPage<?>>) driver -> new UserConfigPage(new UserPage(driver)), "Full Name"},
-                {(Function<WebDriver, BaseMainHeaderPage<?>>) driver -> new MyViewsPage(driver), "This folder is empty"},
-                {(Function<WebDriver, BaseMainHeaderPage<?>>) driver -> new CredentialsPage(driver), "Credentials"},
+                {(Function<WebDriver, BaseMainHeaderPage<?>>) MyViewsPage::new, "This folder is empty"},
+                {(Function<WebDriver, BaseMainHeaderPage<?>>) CredentialsPage::new, "Credentials"},
         };
     }
 
